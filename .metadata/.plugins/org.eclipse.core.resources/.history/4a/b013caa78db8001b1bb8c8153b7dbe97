@@ -1,0 +1,11 @@
+spring.datasource.url=jdbc:mysql://docker-mysql:3306/expensetracker?useSSL=false
+spring.datasource.username=divya
+spring.datasource.password=divya
+
+hibernate.show_sql = true
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+
+server.port=8085
+

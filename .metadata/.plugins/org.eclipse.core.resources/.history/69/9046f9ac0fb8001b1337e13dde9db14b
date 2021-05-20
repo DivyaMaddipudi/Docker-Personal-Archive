@@ -1,0 +1,27 @@
+package com.crud.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.crud.entity.Employee;
+import com.crud.service.EmployeeService;
+
+@RestController
+public class EmployeeController {
+	
+	@Autowired
+	private EmployeeService employeeService;
+	
+	public Employee addEmployee(@RequestBody Employee employee) {
+		return employeeService.saveEmployee(employee);
+	}
+	
+	public List<Employee> addEmployee(@RequestBody List<Employee> employee) {
+		return employeeService.saveEmployee(employee);
+	}
+	
+
+}

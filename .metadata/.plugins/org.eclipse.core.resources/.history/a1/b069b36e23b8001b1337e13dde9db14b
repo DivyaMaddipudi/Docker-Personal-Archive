@@ -1,0 +1,12 @@
+package com.crud.service;
+
+import org.springframework.stereotype.Service;
+
+import com.crud.entity.Employee;
+
+@Service
+public interface EmployeeService {
+	
+	public Employee saveEmployee(Employee employee);
+
+}

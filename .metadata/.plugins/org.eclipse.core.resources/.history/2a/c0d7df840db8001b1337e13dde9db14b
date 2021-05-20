@@ -1,0 +1,11 @@
+package com.crud.service;
+
+import org.springframework.stereotype.Service;
+
+import com.crud.repository.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private EmployeeRepository employeeRepository;
+}

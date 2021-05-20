@@ -1,0 +1,4 @@
+FROM openjdk:8
+ADD target/tracker-mysql.jar tracker-mysql.jar
+EXPOSE 8086
+ENTRYPOINT ["java", "-jar", "/tracker-mysql.jar"]

@@ -1,0 +1,19 @@
+package com.docker.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@SpringBootApplication
+public class SpringBootDockerApplication {
+
+	@RequestMapping("/")
+	public String getHome() {
+		return "Welcome page";
+	}
+	
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootDockerApplication.class, args);
+	}
+
+}

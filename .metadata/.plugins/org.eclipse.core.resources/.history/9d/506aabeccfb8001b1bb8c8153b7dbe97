@@ -1,0 +1,5 @@
+CREATE TABLE Employees_data (
+    id int,
+    empName varchar(255),
+    salary int
+);

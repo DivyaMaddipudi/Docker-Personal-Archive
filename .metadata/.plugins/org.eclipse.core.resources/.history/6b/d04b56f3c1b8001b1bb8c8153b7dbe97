@@ -1,0 +1,4 @@
+FROM openjdk:8
+EXPOSE 8085
+ADD target/demo-mysql.jar demo-mysql.jar
+ENTRYPOINT ["java", "-jar", "demo-mysql.jar"]

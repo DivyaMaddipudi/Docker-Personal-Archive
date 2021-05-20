@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+E:\Git Folders\Docker Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2435803805.index
+\UseCase_examples\src
+E:\Git Folders\Docker Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4162761438.index
+\12ExpenseTracker\src\main\java

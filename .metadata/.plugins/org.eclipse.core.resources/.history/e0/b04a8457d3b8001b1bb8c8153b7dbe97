@@ -1,0 +1,24 @@
+version: "3.8"
+services: 
+  crud-docker-mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3309:3306
+      
+  crud-springboot:
+    image: crud-springboot:latest
+    ports:
+      - 8089:8089
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - crud-docker-mysql
+      
+      

@@ -1,0 +1,18 @@
+package com.docker.crud.demo;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequiredArgsConstructor
+public class StudentController {
+	
+	private final StudentRepo repo;
+	
+	public void addStudent(@RequestBody Student student) {
+		repo.save(student)
+	}
+
+}

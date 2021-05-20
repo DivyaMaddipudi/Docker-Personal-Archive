@@ -1,0 +1,4 @@
+FROM openjdk:8
+EXPOSE 9084
+ADD target/crud-mysql.jar crud-mysql.jar
+ENTRYPOINT ["java", "-jar", "crud-mysql.jar"]

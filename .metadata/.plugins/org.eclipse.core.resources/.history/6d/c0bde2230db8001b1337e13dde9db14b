@@ -1,0 +1,11 @@
+spring: 
+  datasource: 
+    username: student
+    password: student
+    url: jdbc:mysql://localhost:3306/crud_app
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:    show-sql: true
+    
+    hibernate:      ddl-auto: update    
+     
+    

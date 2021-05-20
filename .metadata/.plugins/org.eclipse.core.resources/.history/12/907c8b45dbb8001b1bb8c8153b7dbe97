@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS tracker;
+
+CREATE TABLE tracker (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    name varchar(50) NOT NULL,
+    amount int NOT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES tracker WRITE;
+
+INSERT INTO tracker (id, name, amount) values (1, 'Divya', 40000), (2, 'Riya', 30000), (3, 'Ram', 50000);
+
+UNLOCK TABLES;

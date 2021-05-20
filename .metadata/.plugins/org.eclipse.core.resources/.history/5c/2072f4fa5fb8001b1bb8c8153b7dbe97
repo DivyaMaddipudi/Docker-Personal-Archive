@@ -1,0 +1,8 @@
+package com.docker.crud.demo;
+
+import org.springframework.stereotype.Repository;
+
+
+public class StudentRepo extends JpaRepos{
+
+}

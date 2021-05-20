@@ -1,0 +1,14 @@
+package com.docker.demo.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Employee {
+
+	private Integer id;
+	private String empName;
+	private double salary;
+	
+	
+	
+}
