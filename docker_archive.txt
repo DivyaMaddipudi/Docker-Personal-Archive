@@ -1,0 +1,73 @@
+DockerCli.exe -SwitchDaemon - if Daemon is not running
+
+docker login
+
+------------------------------------------------------
+
+1. Create executable jar
+2. Create docker file - create docker file(Dockerfile) in root direc in spring appln.
+3. Build docker image - Navigate to the Dockerfile path and open cmd
+4. Run docker container
+
+-------------------------------------------------------
+
+spring-boot-maven-plugin: responsible for creating single executable jar 
+
+java -jar <jar name>: to run application in CLI
+
+----------------------------------------------------------
+
+FROM openjdk:8 (base image)
+EXPOSE 8080
+ADD target/spring-boot-docker.jar app.jar (adding our jar to the docker image in the name of app.jar)
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+-----------------------------------------------------
+
+docker --version
+ 
+docker build -t spring-boot-docker .
+
+docker image ls
+
+To run docker container: 
+-> docker run -p8080:8080 spring-boot-docker(<Image Name>)
+
+-p8080:8080: mapping docker 8080 port to local machine port
+ 
+To stop:
+ 
+docker ps - gives all the running container Id's
+
+docker container stop ed0ecf4d35b0(<Container Id>)
+
+To re-start the stopped container:
+
+docker container start ed0ecf4d35b0(<Container Id>)
+
+
+---------------------------------------------------------
+MySQL Docker:
+(Spring Boot Application and MYSQL to be deployed we will need two docker containers. 
+And also these will then need to be running on same network so that they can communicate with each other.)
+
+docker network create employee-mysql
+
+docker network ls
+
+docker container run --name mysqldb --network employee-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=bootdb -d mysql:8
+
+docker image build -t employeeapi . 
+
+docker container run --network spring-mysql --name employeeapi-container -p 8087:8087 -d employeeapi (run image as container)
+
+docker container logs -f employeeapi-container
+
+-------------------------------------------------------------------------
+SQL 
+  mysql -h mysqldb(CONTAINER NAME) -P 3306 -u root -p
+-------------------------------------------------------------------------
+
+
+
+
